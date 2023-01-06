@@ -13,13 +13,28 @@ export default function Input() {
     { name: "Email", type: "email", id: uniqid() },
     { name: "Description", type: "textarea", id: uniqid() },
   ];
+
+  const workExperience = [
+    { name: "Position", type: "text" },
+    { name: "Company", type: "text" },
+    { name: "City", type: "text" },
+    { name: "From", type: "date" },
+    { name: "To", type: "date" },
+  ];
+
+  const education = [
+    { name: "Degree", type: "text" },
+    { name: "University", type: "text" },
+    { name: "City", type: "text" },
+    { name: "From", type: "date" },
+    { name: "To", type: "date" },
+  ];
+
   return (
     <div className="input">
-      <Block
-        title="Personal Information"
-        info={personalInformation}
-        extra={false}
-      />
+      <Block title="Personal Information" info={personalInformation} />
+      <Block title="Work Experience" info={workExperience} />
+      <Block title="Education" info={education} />
     </div>
   );
 }

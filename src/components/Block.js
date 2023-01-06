@@ -1,13 +1,13 @@
-export default function Block({ title, extra, info }) {
+export default function Block({ title, info }) {
   return (
-    <div>
+    <div className="blocks">
       <span>{title}</span>
       {info.map((field) => {
         return (
-          <form className="block" key={field.id}>
+          <div className="block" key={field.id}>
             <label htmlFor={field.id}>{field.name}</label>
             {returnInput(field)}
-          </form>
+          </div>
         );
       })}
     </div>
