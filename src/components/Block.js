@@ -4,12 +4,17 @@ export default function Block({ title, extra, info }) {
       <span>{title}</span>
       {info.map((field) => {
         return (
-          <div className="block">
+          <form className="block" key={field.id}>
             <label htmlFor={field.id}>{field.name}</label>
-            <input type={field.type} key={field.id} id={field.id} />
-          </div>
+            {returnInput(field)}
+          </form>
         );
       })}
     </div>
   );
+}
+
+function returnInput({ type, id }) {
+  if (type === "textarea") return <textarea id={id}></textarea>;
+  return <input type={type} id={id} />;
 }
